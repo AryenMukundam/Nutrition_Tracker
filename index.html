@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Nutrition Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Daily Nutrition Tracker</h1>
+      <div class="columns">
+        <!-- Left Column: Meal Inputs and History -->
+        <div class="left-column">
+          <div class="meal-section">
+            <h2>Set Daily Goals</h2>
+            <!-- The input’s value will be updated from localStorage on page load -->
+            <input
+              type="number"
+              id="calorieGoal"
+              placeholder="Daily Calorie Goal (kcal)"
+            />
+            <button onclick="setGoals()">Set Goals</button>
+          </div>
+          <div class="meal-section">
+            <h2>Add Meal</h2>
+            <select id="mealType">
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+            </select>
+            <input
+              type="text"
+              id="mealInput"
+              placeholder="E.g., 1 cup oatmeal, 1 banana"
+            />
+            <button onclick="fetchNutrition()">Add</button>
+            <div id="mealInfo"></div>
+          </div>
+          <div class="meal-history">
+            <h2>Meal History</h2>
+            <div id="mealHistory"></div>
+          </div>
+          <button onclick="clearData()" style="background: #dc3545">
+            Clear All Data
+          </button>
+        </div>
+
+        <!-- Right Column: Progress & Charts -->
+        <div class="right-column">
+          <div class="progress-bar">
+            <div id="calorieProgress" class="progress"></div>
+          </div>
+          <h2 id="totalCalories">Total Calories: 0 kcal</h2>
+          <canvas id="nutritionChart"></canvas>
+          <canvas id="macronutrientChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

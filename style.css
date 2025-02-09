@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Two-column layout */
+.columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Left column styling */
+.left-column {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right column styling */
+.right-column {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meal-section {
+  padding: 15px;
+  border-radius: 10px;
+  background: #e9ecef;
+}
+
+input,
+select {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+button:hover {
+  background: #218838;
+}
+
+#totalCalories {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  width: 100%;
+  background: #e9ecef;
+  border-radius: 5px;
+}
+
+.progress {
+  height: 20px;
+  background: #28a745;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  line-height: 20px;
+}
+
+/* Meal History Styling */
+.meal-history {
+  text-align: left;
+}
+
+.meal-history-item {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.meal-history-item button {
+  background: #dc3545;
+  margin-left: 10px;
+}
+
+.meal-history-item button:hover {
+  background: #c82333;
+}
+
+/* Spinner styles for loading indicator */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive layout: revert to single column on smaller screens */
+@media (max-width: 768px) {
+  .columns {
+    flex-direction: column;
+  }
+  .left-column,
+  .right-column {
+    max-width: 100%;
+  }
+}
